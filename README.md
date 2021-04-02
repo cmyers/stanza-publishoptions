@@ -1,4 +1,6 @@
 # stanza-publishoptions
+ <img src="https://img.shields.io/npm/v/stanza-publishoptions?style=plastic" />
+
 
 Plugin for use with https://github.com/legastero/stanza to enable publishing with options.
 
