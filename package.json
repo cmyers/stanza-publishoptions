@@ -1,6 +1,6 @@
 {
   "name": "stanza-publishoptions",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Stanzajs plugin for publishing with options",
   "main": "dist",
   "types": "dist",
@@ -23,7 +23,7 @@
     "lint": "eslint . --ext .ts"
   },
   "author": "Chris Myers",
-  "license": "ISC",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/cmyers/stanza-publishoptions.git"
