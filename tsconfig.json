@@ -1,18 +1,29 @@
 {
   "compilerOptions": {
+    "rootDir": "./src",
     "outDir": "./dist",
-    "target": "es6",
+    "target": "es5",
     "module": "commonjs",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
     "sourceMap": true,
     "declaration": true,
     "declarationMap": true,
     "strict": true,
     "noUnusedLocals": true,
     "resolveJsonModule": true,
-    "removeComments": true
+    "removeComments": true,
+    "noImplicitAny": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "noUnusedParameters": true,
+    "types": [ "node" ]
   },
   "include": [
-    "src",
-    "test"
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
   ]
 }

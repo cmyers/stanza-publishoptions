@@ -1,15 +1,16 @@
 {
   "name": "stanza-publishoptions",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Stanzajs plugin for publishing with options",
-  "main": "dist",
+  "main": "./dist/index.min.js",
   "types": "dist",
   "files": [
     "dist",
     "LICENSE",
     "README.md",
     "!/dist/**/*.js.map",
-    "!/dist/**/*.ts.map"
+    "!/dist/**/*.ts.map",
+    "!/dist/**/index.js"
   ],
   "keywords": [
     "XMPP",
@@ -18,8 +19,9 @@
     "pubsub"
   ],
   "scripts": {
-    "build": "tsc --project .\tsconfig.build.json",
+    "build": "tsc && npm run minify",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "minify": "uglifyjs --compress --mangle --output ./dist/index.min.js -- ./dist/index.js",
     "lint": "eslint . --ext .ts"
   },
   "author": "Chris Myers",
@@ -32,7 +34,8 @@
     "@typescript-eslint/eslint-plugin": "^4.20.0",
     "@typescript-eslint/parser": "^4.20.0",
     "eslint": "^7.23.0",
-    "typescript": "^4.2.3"
+    "typescript": "^4.2.3",
+    "uglify-js": "^3.13.3"
   },
   "dependencies": {
     "stanza": "^12.15.0"
