@@ -57,3 +57,27 @@ client.on('session:started', () => {
 
 });
 ```
+
+Sends the following XMPP query:
+
+```
+<iq xmlns="jabber:client" id="iqId" from="admin@localhost" type="set">
+ <pubsub xmlns="http://jabber.org/protocol/pubsub">
+  <publish node="nodeNamespace">
+   <item id="itemId">
+    <stuff xmlns="testnamespace">Some value</stuff>
+   </item>
+  </publish>
+  <publish-options>
+   <x xmlns="jabber:x:data" type="submit">
+    <field var="FORM_TYPE" type="hidden">
+     <value>http://jabber.org/protocol/pubsub#publish-options</value>
+    </field>
+    <field var="pubsub#access_model">
+     <value>open</value>
+    </field>
+   </x>
+  </publish-options>
+ </pubsub>
+</iq>
+```
