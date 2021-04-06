@@ -1,6 +1,6 @@
 import { Agent } from 'stanza';
-import { IQType } from 'stanza/Constants';
-import { IQ, PubsubItemContent } from 'stanza/protocol';
+import { DataFormFieldType, IQType } from 'stanza/Constants';
+import { DataFormField, IQ, PubsubItemContent } from 'stanza/protocol';
 
 declare module 'stanza' {
     export interface Agent {
@@ -11,10 +11,7 @@ declare module 'stanza' {
             publishNode: string,
             itemType: T,
             context: 'owner' | 'user',
-            publishOptions: Array<{
-                name: string;
-                value: string;
-            }>,
+            publishOptions: Array<DataFormField>,
         ): Promise<IQ>;
     }
 }
@@ -27,10 +24,7 @@ export default function (client: Agent): void {
         publishNode: string,
         item: T,
         context: 'owner' | 'user',
-        publishOptions: Array<{
-            name: string;
-            value: string;
-        }>
+        publishOptions: Array<DataFormField>
     ) => {
         return client.sendIQ({
             id: iqId,
@@ -50,7 +44,7 @@ export default function (client: Agent): void {
                         {
                             name: 'FORM_TYPE',
                             value: 'http://jabber.org/protocol/pubsub#publish-options',
-                            type: 'hidden'
+                            type: DataFormFieldType.Hidden
                         },
                         ...publishOptions
                     ]
