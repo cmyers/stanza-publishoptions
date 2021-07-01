@@ -1,16 +1,15 @@
 {
   "name": "stanza-publishoptions",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Stanzajs plugin for publishing with options",
-  "main": "./dist/index.min.js",
+  "main": "./dist/index.js",
   "types": "dist",
   "files": [
-    "dist",
+    "dist/*",
     "LICENSE",
     "README.md",
-    "!/dist/**/*.js.map",
-    "!/dist/**/*.ts.map",
-    "!/dist/**/index.js"
+    "!dist/**/*.js.map",
+    "!dist/**/*.ts.map"
   ],
   "keywords": [
     "XMPP",
@@ -19,9 +18,9 @@
     "pubsub"
   ],
   "scripts": {
-    "build": "tsc && npm run minify",
+    "build": "webpack",
+    "build-prod": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "minify": "uglifyjs --compress --mangle --output ./dist/index.min.js -- ./dist/index.js",
     "lint": "eslint . --ext .ts"
   },
   "author": "Chris Myers",
@@ -31,13 +30,16 @@
     "url": "https://github.com/cmyers/stanza-publishoptions.git"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.21.0",
-    "@typescript-eslint/parser": "^4.21.0",
-    "eslint": "^7.23.0",
-    "typescript": "^4.2.3",
-    "uglify-js": "^3.13.3"
+    "@typescript-eslint/eslint-plugin": "^4.28.1",
+    "@typescript-eslint/parser": "^4.28.1",
+    "eslint": "^7.29.0",
+    "ts-loader": "^9.2.3",
+    "typescript": "^4.3.5",
+    "webpack": "^5.41.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-node-externals": "^3.0.0"
   },
   "dependencies": {
-    "stanza": "^12.15.0"
+    "stanza": "^12.17.2"
   }
 }

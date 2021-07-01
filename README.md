@@ -1,12 +1,7 @@
 # stanza-publishoptions
  <a href="https://www.npmjs.com/package/stanza-publishoptions"><img src="https://img.shields.io/npm/v/stanza-publishoptions?style=plastic" /></a>
 
-
 Plugin for use with https://github.com/legastero/stanza to enable publishing with options.
-
-Install
-
-`npm install stanza-publishoptions`
 
 Usage:
 
@@ -39,7 +34,7 @@ client.stanzas.define({
 });
  
 client.on('session:started', () => {
-    client.publishWithOptions(
+    client.publishWithOptions<MyPubSubContent>(
         'admin@localhost',
         'iqId',
         'itemId',
