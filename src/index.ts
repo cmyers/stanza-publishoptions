@@ -5,7 +5,8 @@ import { DataFormField, IQ, PubsubItemContent } from 'stanza/protocol';
 declare module 'stanza' {
     export interface Agent {
         publishWithOptions<T extends PubsubItemContent = PubsubItemContent>(
-            from: string,
+            to: string | undefined,
+            from: string | undefined,
             iqId: string,
             itemId: string,
             publishNode: string,
@@ -18,7 +19,8 @@ declare module 'stanza' {
 
 export default function (client: Agent): void {
     client.publishWithOptions = <T extends PubsubItemContent = PubsubItemContent>(
-        from: string,
+        to: string | undefined,
+        from: string | undefined,
         iqId: string,
         itemId: string,
         publishNode: string,
@@ -28,6 +30,7 @@ export default function (client: Agent): void {
     ) => {
         return client.sendIQ({
             id: iqId,
+            to,
             from,
             pubsub: {
                 context,
