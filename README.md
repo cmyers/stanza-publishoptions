@@ -35,7 +35,8 @@ client.stanzas.define({
  
 client.on('session:started', () => {
     client.publishWithOptions<MyPubSubContent>(
-        'admin@localhost',
+        'to@jid',
+        'from@jid',
         'iqId',
         'itemId',
         'nodeNamespace',
@@ -56,7 +57,7 @@ client.on('session:started', () => {
 Sends the following XMPP query:
 
 ```
-<iq xmlns="jabber:client" id="iqId" from="admin@localhost" type="set">
+<iq xmlns="jabber:client" id="iqId" to="to@jid" from="from@jid" type="set">
  <pubsub xmlns="http://jabber.org/protocol/pubsub">
   <publish node="nodeNamespace">
    <item id="itemId">
