@@ -1,6 +1,6 @@
 {
   "name": "stanza-publishoptions",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Stanzajs plugin for publishing with options",
   "main": "./dist/index.js",
   "types": "dist",
@@ -30,13 +30,13 @@
     "url": "https://github.com/cmyers/stanza-publishoptions.git"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.31.0",
-    "@typescript-eslint/parser": "^4.31.0",
-    "eslint": "^7.32.0",
-    "ts-loader": "^9.2.5",
-    "typescript": "^4.4.2",
-    "webpack": "^5.52.0",
-    "webpack-cli": "^4.8.0",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "eslint": "^8.3.0",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.5.2",
+    "webpack": "^5.64.4",
+    "webpack-cli": "^4.9.1",
     "webpack-node-externals": "^3.0.0"
   },
   "dependencies": {
